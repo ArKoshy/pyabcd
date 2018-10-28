@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request
 #request is used to read data from HMTL
 from data import Faculties  # to import function
+import os
+portr = int(os.environ.get("PORT", 5000))
+
 app = Flask(__name__)
 
 getfaculties = Faculties()
@@ -28,4 +31,4 @@ def faculties():
     return render_template('faculties.html',sendDat =getfaculties)
 
    ## debug=True turns on debug mode
-app.run(debug=True, port=33602)
+app.run(debug=True, port=portr)
