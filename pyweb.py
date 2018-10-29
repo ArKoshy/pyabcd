@@ -31,4 +31,4 @@ def faculties():
     return render_template('faculties.html',sendDat =getfaculties)
 
    ## debug=True turns on debug mode
-app.run(debug=True, port=portr)
+app.run(host='0.0.0', port=portr)
